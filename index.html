@@ -1,41 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OneWorldFeed</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OneWorldFeed</title>
+
+  <!-- Fredoka for title -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="sky"></div>
+  <!-- NOW PLAYING BAR -->
+  <header class="now-playing">
+    <div class="np-label">Now Playing</div>
+    <div class="np-main">
+      <span class="np-title" id="np-title">Sunrise Sounds</span>
+      <span class="np-separator">•</span>
+      <span class="np-cities" id="np-cities">Paris ↔ Tokyo</span>
+      <span class="np-separator">•</span>
+      <span class="np-genre" id="np-genre">Chill, Acoustic, World Folk</span>
+    </div>
+    <div class="np-right">
+      <div class="np-wave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <button class="np-button">Listen Live</button>
+    </div>
+  </header>
 
-    <header>
-        <h1 id="title">OneWorldFeed</h1>
-    </header>
+  <!-- SKY HERO -->
+  <section class="sky-hero">
+    <div class="cloud cloud-left"></div>
+    <div class="cloud cloud-right"></div>
 
-    <nav class="nav-bar">
-        <a href="#" class="nav-item">
-            <img src="icons/earth.png" alt="Home" />
-            <span>Home</span>
-        </a>
+    <div class="hero-center">
+      <!-- MAIN LOGO -->
+      <img src="grok_image_1769038878185.jpg"
+           alt="OneWorldFeed Logo"
+           class="hero-logo main-logo" />
 
-        <a href="#" class="nav-item">
-            <img src="icons/grok_image_1769048268949.jpg" alt="Live Feed" />
-            <span>Live Feed</span>
-        </a>
+      <!-- TITLE -->
+      <h2 class="title interactive-title">
+        <span class="title-white">ONEWORLD</span><span class="title-feed">FEED</span>
+      </h2>
 
-        <a href="#" class="nav-item">
-            <img src="icons/schedule.png" alt="Schedule" />
-            <span>Schedule</span>
-        </a>
+      <p>24 hours of global sound, following the sun and moon.</p>
 
-        <a href="#" class="nav-item">
-            <img src="icons/settings.png" alt="Settings" />
-            <span>Settings</span>
-        </a>
-    </nav>
+      <!-- 24-HOUR LINE -->
+      <div class="dayline">
+        <div class="dayline-end dayline-night">
+          <span class="emoji">🌙</span>
+          <span class="label">00:00</span>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="dayline-track">
+          <div class="dayline-gradient"></div>
+          <div class="dayline-now"></div>
+          <div class="dayline-ticks">
+            <span>06:00</span>
+            <span>12:00</span>
+            <span>18:00</span>
+          </div>
+        </div>
+
+        <div class="dayline-end dayline-day">
+          <span class="emoji">☀️</span>
+          <span class="label">24:00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <main class="schedule">
+
+    <!-- MORNING -->
+    <section class="slot slot-morning" data-slot="morning">
+      <div class="slot-header">
+        <h3>Morning • 6AM – 12PM</h3>
+        <div class="subtime">Late Morning • 9AM – 12PM</div>
+      </div>
+
+      <div class="slot-body">
+        <!-- Scenic art panel -->
+        <div class="city-art morning-art parallax-layer"></div>
+
+        <div class="genre-title">Sunrise Sounds</div>
+
+        <div class="city-pair">
+          <span>Paris</span>
+          <span class="arrow">
+            <span class="arrow-dot"></span>
+            ↔
+          </span>
+          <span>Tokyo</span>
+        </div>
+
+        <div class="genre-badges">
+          <span class="badge-chill">Chill</span>
+          <span class="badge-acoustic">Acoustic</span>
+          <span class="badge-worldfolk">World Folk</span>
+        </div>
+
+        <div class="supported">
+          Supported by Mastercard &amp; Red Bull
+        </div>
+      </div>
+    </section>
+
+    <!-- AFTERNOON -->
+    <section class="slot slot-afternoon" data-slot="afternoon">
+      <div class="slot-header">
+        <h3>Afternoon • 12PM – 6PM</h3>
+        <div class="subtime">Early Afternoon • 12PM – 3PM</div>
+      </div>
+
+      <div class="slot-body">
+        <div class="city-art afternoon-art parallax-layer"></div>
+
+        <div class="genre-title">Afrobeat Jam</div>
+
+        <div class="city-pair">
+          <span>Lagos</span>
+          <span class="arrow">
+            <span class="arrow-dot"></span>
+            ↔
+          </span>
+          <span>Accra</span>
+        </div>
+
+        <div class="genre-badges">
+          <span class="badge-pop">Pop</span>
+          <span class="badge-afrobeats">Afrobeats</span>
+          <span class="badge-latin">Latin Rhythms</span>
+        </div>
+
+        <div class="supported">
+          Supported by Red Bull
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENING -->
+    <section class="slot slot-evening slot-live" data-slot="evening">
+      <div class="slot-header">
+        <div class="slot-header-left">
+          <h3>Evening • 6PM – 12AM</h3>
+          <div class="subtime">Night • 9PM – 11PM</div>
+        </div>
+        <div class="live-badge">
+          <span class="live-dot"></span>
+          LIVE
+        </div>
+      </div>
+
+      <div class="slot-body">
+        <div class="city-art evening-art parallax-layer"></div>
+
+        <div class="genre-title">Night Vibes</div>
+
+        <div class="city-pair">
+          <span>Berlin</span>
+          <span class="arrow">
+            <span class="arrow-dot"></span>
+            ↔
+          </span>
+          <span>NYC</span>
+        </div>
+
+        <div class="genre-badges">
+          <span class="badge-edm">EDM</span>
+          <span class="badge-hiphop">Hip‑Hop</span>
+          <span class="badge-global">Global Top Hits</span>
+        </div>
+
+        <div class="supported">
+          Supported by Red Bull
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NAVIGATION -->
+  <nav class="bottom-nav">
+    <button class="nav-item active">
+      <img src="grok_image_1769038878185.jpg" alt="Home" />
+      <span>Home</span>
+    </button>
+
+    <button class="nav-item">
+      <img src="grok_image_1769047843095.jpg" alt="Music Feed" />
+      <span>Music</span>
+    </button>
+
+    <button class="nav-item">
+      <img src="grok_image_1769048211146.jpg" alt="Podcast Feed" />
+      <span>Podcast</span>
+    </button>
+
+    <button class="nav-item">
+      <img src="grok_image_1769048268949.jpg" alt="Live Feed" />
+      <span>Live</span>
+    </button>
+
+    <button class="nav-item">
+      <img src="grok_image_1769046782671.jpg" alt="Social Feed" />
+      <span>Social</span>
+    </button>
+  </nav>
+
+  <!-- REAL-TIME + INTERACTION LOGIC -->
+  <script>
+    function updateDayline() {
+      const now = new Date();
+      const hours = now.getHours() + now.getMinutes() / 60;
+      const percent = (hours / 24) * 100;
+      document.querySelector('.dayline-now').style.left = percent + '%';
+    }
+
+    function updateTitleColor() {
+      const now = new Date();
+      const hours = now.getHours() + now.getMinutes() / 60;
+      const percent = hours / 24;
+
+      const sunrise = { r: 255, g: 122, b: 26 };
+      const noon =    { r: 255, g: 213, b: 74 };
+      const sunset =  { r: 255, g: 150, b: 40 };
+
+      let color;
+      if (percent < 0.5) {
+        const t = percent / 0.5;
+        color = {
+          r: sunrise.r + (noon.r - sunrise.r) * t,
+          g: sunrise.g + (noon.g - sunrise.g) * t,
+          b: sunrise.b + (noon.b - sunrise.b) * t
+        };
+      } else {
+        const t = (percent - 0.5) / 0.5;
+        color = {
+          r: noon.r + (sunset.r - noon.r) * t,
+          g: noon.g + (sunset.g - noon.g) * t,
+          b: noon.b + (sunset.b - noon.b) * t
+        };
+      }
+      document.querySelector('.title-feed').style.color =
+        `rgb(${color.r}, ${color.g}, ${color.b})`;
+    }
+
+    function updateTitleGlow() {
+      const now = new Date();
+      const hours = now.getHours() + now.getMinutes() / 60;
+      const percent = hours / 24;
+      const intensity = 1 - Math.abs(percent - 0.5) * 2;
+      document.querySelector('.interactive-title')
+        .style.setProperty('--glow-intensity', intensity);
+    }
+
+    // Mouse-follow glow
+    const title = document.querySelector('.interactive-title');
+    document.addEventListener('mousemove', (e) => {
+      const rect = title.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      title.style.setProperty('--mx', x + '%');
+      title.style.setProperty('--my', y + '%');
+    });
+
+    // Now Playing logic
+    function updateNowPlaying() {
+      const now = new Date();
+      const h = now.getHours();
+      let slot = 'morning';
+      if (h >= 12 && h < 18) slot = 'afternoon';
+      if (h >= 18 || h < 6) slot = 'evening';
+
+      const data = {
+        morning: {
+          title: 'Sunrise Sounds',
+          cities: 'Paris ↔ Tokyo',
+          genre: 'Chill, Acoustic, World Folk'
+        },
+        afternoon: {
+          title: 'Afrobeat Jam',
+          cities: 'Lagos ↔ Accra',
+          genre: 'Pop, Afrobeats, Latin Rhythms'
+        },
+        evening: {
+          title: 'Night Vibes',
+          cities: 'Berlin ↔ NYC',
+          genre: 'EDM, Hip‑Hop, Global Top Hits'
+        }
+      };
+
+      document.getElementById('np-title').textContent = data[slot].title;
+      document.getElementById('np-cities').textContent = data[slot].cities;
+      document.getElementById('np-genre').textContent = data[slot].genre;
+
+      document.querySelectorAll('.slot').forEach(s => s.classList.remove('slot-active'));
+      const active = document.querySelector(`.slot-${slot}`);
+      if (active) active.classList.add('slot-active');
+
+      const np = document.querySelector('.now-playing');
+      np.classList.remove('np-morning', 'np-afternoon', 'np-evening');
+      np.classList.add('np-' + slot);
+    }
+
+    // Parallax on scenic panels
+    window.addEventListener('scroll', () => {
+      const layers = document.querySelectorAll('.parallax-layer');
+      const scrollY = window.scrollY;
+      layers.forEach(layer => {
+        const speed = 0.15;
+        layer.style.transform = `translateY(${scrollY * speed * -0.1}px)`;
+      });
+    });
+
+    updateDayline();
+    updateTitleColor();
+    updateTitleGlow();
+    updateNowPlaying();
+
+    setInterval(() => {
+      updateDayline();
+      updateTitleColor();
+      updateTitleGlow();
+      updateNowPlaying();
+    }, 60000);
+  </script>
 </body>
 </html>
